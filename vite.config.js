@@ -20,40 +20,36 @@ function obtenerHtmlFiles() {
             }
         ).map((file)=>{
             return [
-                file.slice(0, file.length - path.extname(file).length), // nombre del archivo sin extensión
-                resolve(__dirname, file) // full path a el archivo
+                file.slice(0, file.length - path.extname(file).length),
+                resolve(__dirname, file)
             ]
         })
     );
-    /*
-        {
-            "index": "~/....../index.html",
-            "productos": "~/......../productos.html",
-        }
-    */
 }
 
-export default defineConfig(
-    {
-        appType: 'mpa',
-        build: {
-            rolldownOptions: {
-                input: obtenerHtmlFiles()
+export default defineConfig({
+    // 👇 AGREGA ESTA LÍNEA
+    base: '/portafolio_OlvinMartinez-/',
+
+    appType: 'mpa',
+
+    build: {
+        rolldownOptions: {
+            input: obtenerHtmlFiles()
+        }
+    },
+
+    plugins: [
+        HandlebarPlugin({
+            partialDirectory: resolve(__dirname, 'src/partials'),
+            context: (page) => {
+                console.log(`Cargando contexto de: ${page}`);
+                let context = getPageContext(page);
+                console.log(JSON.stringify(context, null, 2));
+                return context;
             }
-        },
-        plugins: [
-            HandlebarPlugin(
-                {
-                    partialDirectory: resolve(__dirname, 'src/partials'),
-                    context: (page) => {
-                        console.log(`Cargando contexto de: ${page}`);
-                        let context = getPageContext(page);
-                        console.log(JSON.stringify(context,null, 2));
-                        return context;
-                    }
-                }
-            ),
-            HtmlCssPurgePlugin()
-        ]
-    }
-);
+        }),
+
+        HtmlCssPurgePlugin()
+    ]
+});
