@@ -1,0 +1,132 @@
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+.grid {
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+[class*="col-"] {
+    padding: 1.5rem;
+    color: #000000;
+}
+
+.col-1 {
+    flex: 0 0 calc((100% / 12) * 1 - 1.5rem);
+}
+
+.col-2 {
+    flex: 0 0 calc((100% / 12) * 2 - 1.5rem);
+}
+
+.col-3 {
+    flex: 0 0 calc((100% / 12) * 3 - 1.5rem);
+}
+
+.col-4 {
+    flex: 0 0 calc((100% / 12) * 4 - 1.5rem);
+}
+
+.col-5 {
+    flex: 0 0 calc((100% / 12) * 5 - 1.5rem);
+}
+
+.col-6 {
+    flex: 0 0 calc((100% / 12) * 6 - 1.5rem);
+}
+
+.col-7 {
+    flex: 0 0 calc((100% / 12) * 7 - 1.5rem);
+}
+
+.col-8 {
+    flex: 0 0 calc((100% / 12) * 8 - 1.5rem);
+}
+
+.col-9 {
+    flex: 0 0 calc((100% / 12) * 9 - 1.5rem);
+}
+
+.col-10 {
+    flex: 0 0 calc((100% / 12) * 10 - 1.5rem);
+}
+
+.col-11 {
+    flex: 0 0 calc((100% / 12) * 11 - 1.5rem);
+}
+
+.col-12 {
+    flex: 0 0 100%;
+}
+
+@media (min-width:768px) {
+
+    .col-md-1 {
+        flex: 0 0 calc((100% / 12) * 1 - 1.5rem);
+    }
+
+    .col-md-2 {
+        flex: 0 0 calc((100% / 12) * 2 - 1.5rem);
+    }
+
+    .col-md-3 {
+        flex: 0 0 calc((100% / 12) * 3 - 1.5rem);
+    }
+
+    .col-md-4 {
+        flex: 0 0 calc((100% / 12) * 4 - 1.5rem);
+    }
+
+    .col-md-5 {
+        flex: 0 0 calc((100% / 12) * 5 - 1.5rem);
+    }
+
+    .col-md-6 {
+        flex: 0 0 calc((100% / 12) * 6 - 1.5rem);
+    }
+
+    .col-md-7 {
+        flex: 0 0 calc((100% / 12) * 7 - 1.5rem);
+    }
+
+    .col-md-8 {
+        flex: 0 0 calc((100% / 12) * 8 - 1.5rem);
+    }
+
+    .col-md-9 {
+        flex: 0 0 calc((100% / 12) * 9 - 1.5rem);
+    }
+
+    .col-md-10 {
+        flex: 0 0 calc((100% / 12) * 10 - 1.5rem);
+    }
+
+    .col-md-11 {
+        flex: 0 0 calc((100% / 12) * 11 - 1.5rem);
+    }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+    }
+}
+
+@media (max-width:767px) {
+
+    .row {
+        gap: 1rem;
+    }
+
+    [class*="col-"] {
+        flex: 0 0 100%;
+    }
+}
